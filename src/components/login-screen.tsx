@@ -4,7 +4,7 @@ import { KeyboardAvoidingView, Platform, Text, View } from 'react-native';
 import { useAuth } from '@/lib/auth';
 import { supabase, isConfigured } from '@/lib/supabase';
 import { colors, space } from '@/lib/theme';
-import { Logo } from './logo';
+import { KoveWordmark } from './logo';
 import { Button, Card, Field, Muted } from './ui';
 
 export default function LoginScreen({ inactive = false }: { inactive?: boolean }) {
@@ -41,8 +41,9 @@ export default function LoginScreen({ inactive = false }: { inactive?: boolean }
       <View style={{ flex: 1, justifyContent: 'center', padding: space.xl, alignItems: 'center' }}>
         <View style={{ width: '100%', maxWidth: 400 }}>
           <View style={{ alignItems: 'center', marginBottom: space.xl }}>
-            <Logo size={44} light />
-            <Text style={{ color: '#DCE7F3', marginTop: space.sm }}>Policies · Leads · Renewals</Text>
+            <KoveWordmark width={180} />
+            <Text style={{ color: '#fff', fontSize: 22, fontWeight: '800', marginTop: space.lg }}>Fizzy</Text>
+            <Text style={{ color: '#D5E8EB', marginTop: 2 }}>Policies · Leads · Renewals</Text>
           </View>
           <Card>
             {!isConfigured ? (
@@ -69,7 +70,7 @@ export default function LoginScreen({ inactive = false }: { inactive?: boolean }
               </>
             )}
           </Card>
-          <Muted style={{ color: '#DCE7F3', textAlign: 'center', fontSize: 12 }}>Accounts are created by your admin.</Muted>
+          <Muted style={{ color: '#D5E8EB', textAlign: 'center', fontSize: 12 }}>Accounts are created by your admin.</Muted>
         </View>
       </View>
     </KeyboardAvoidingView>
